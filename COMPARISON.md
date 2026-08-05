@@ -14,7 +14,7 @@ Both options are based on the same excellent community work by @finnisher. Both 
 | Your original add-ons | Converted files are copied into the aircraft package | Leonardo and IA are only read; they are never changed |
 | Result | A converted aircraft sound setup | A separate `maddog-sound-compat-...` Community folder |
 | Removing it | Restore backups or reinstall the changed package | Delete the one generated Community folder |
-| Sound choices | Uses the script’s conversion choices | Uses a tested IA-first baseline; advanced users can change complete sound groups |
+| Sound choices | Uses the script’s conversion choices | Uses an IA-first baseline with two fixed isolated fallbacks; advanced users can change other complete sound groups |
 | Leonardo crew and callouts | Some are recreated with extra WAV files | Original Leonardo crew-pack and PNF systems remain in use |
 | Leonardo-only features | Added back through selected script operations | Kept directly from Leonardo when IA has no complete replacement |
 | Safety checks | The user must apply everything correctly | The tool checks versions, source files, sound links, generated files, and repeatable output |
@@ -28,7 +28,14 @@ The tool reads your Leonardo and IA packages and builds a new add-on somewhere e
 
 ### It keeps the best parts of both packs
 
-The baseline prefers IA sounds where a complete replacement exists and has been tested. Leonardo remains responsible for things IA does not fully replace, such as the selected crew pack, pilot-not-flying (PNF) callouts, and any missing warning or aircraft-specific sound.
+The baseline prefers IA sounds where a complete replacement exists and has sufficient evidence for inclusion. Leonardo remains responsible for its selected crew pack, pilot-not-flying (PNF) callouts, three-perspective mechanic call, and aircraft-specific behavior.
+
+Outside those intentional Leonardo systems, only two isolated IA compatibility gaps fall back to Leonardo:
+
+- cockpit-door motion, because IA's opening and closing routes become audible too late for the native door animation;
+- the fast approach-minimums warning, because the released IA Event targets a Wwise object that is absent from its bank.
+
+Those two fallbacks are fixed rather than offered as IA overrides.
 
 ### It avoids mixing one machinery sequence
 
@@ -46,16 +53,15 @@ Use the official installer/updater or reinstall the affected add-on. Do not try 
 
 Normal Leonardo Manager crew changes and supported GSX file-list updates are handled separately; replaced sound or model files are not.
 
-## What will the first release sound like?
+## What does the release baseline sound like?
 
-The planned baseline uses:
+The baseline uses:
 
-- IA for the major complete sound groups that pass final testing;
-- Leonardo for Manager-selected crew voices and PNF callouts;
-- Leonardo for genuinely unique aircraft sounds;
-- Leonardo as a fallback where an IA sound is missing or does not work.
+- IA for the compatible machinery, engine, wind, warning, and control groups;
+- Leonardo for Manager-selected crew voices, PNF callouts, the complete mechanic-call perspectives, and genuinely unique aircraft sounds;
+- Leonardo for the two isolated IA fallbacks: cockpit-door motion and the fast approach-minimums warning.
 
-Native MSFS 2024 is being tested locally. MSFS 2020 can be built from supported files, but the maintainer does not own that simulator, so it remains unverified and may need the generated package ordered after Leonardo.
+Native MSFS 2024 has family-level evidence and targeted runtime checks; this is not a claim that broad simulator smoke testing is complete. MSFS 2020 can be built from supported files, but the maintainer does not own that simulator, so it remains runtime-unverified and may need the generated package ordered after Leonardo.
 
 ## Which option should I choose?
 
