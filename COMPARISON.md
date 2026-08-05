@@ -1,37 +1,66 @@
-# Finnisher’s script and Maddog Sound Fix
+# Community script or Maddog Sound Fix?
 
-Finnisher’s community script is the starting point for this project and remains valuable evidence about IA placement, model corrections, missing Anniversary bindings, and in-simulator behavior. Maddog Sound Fix automates a different installation approach rather than claiming that work was wrong.
+Both options are based on the same excellent community work by @finnisher. Both require you to own Leonardo Fly the Maddog X and the Immersive Audio sound pack.
 
-## Key differences
+## The short version
 
-| | Finnisher’s community script | Maddog Sound Fix |
+**Finnisher’s script** is a set of instructions for manually converting the Maddog sound setup.
+
+**Maddog Sound Fix** is a Windows tool that does the complicated work for you, checks that the files are supported, and creates a separate add-on that is easy to remove.
+
+| | Finnisher’s script | Maddog Sound Fix |
 | --- | --- | --- |
-| Starting point | Starts from the wholesale IA sound setup and adapts it to the Maddog | Starts from Leonardo’s complete setup and moves complete compatible behaviors to IA |
-| Installation | Produces files that are copied into or replace files under the aircraft package | Builds a separate removable Community package |
-| Original add-ons | Requires careful backup/restoration when files have been replaced | Treats both paid packages as read-only and refuses changed supported inputs |
-| Sound ownership | Uses the IA-oriented converted document | Gives each complete coupled sound sequence to one provider, avoiding mixed start/run/stop behavior |
-| Leonardo-only behavior | Adds selected Anniversary behavior and recreates some calls using external WAV files | Keeps Leonardo PNF, Manager-selected crew, and proven unique behavior from their original banks |
-| IA warning gaps | Uses IA XML wholesale; definitions with broken/missing IA bank routes remain silent | Can retain a Leonardo fallback or use a validated recovered IA route for an individual missing warning |
-| Anniversary controls | Grafts newer controls onto generic IA switch Events | Uses the same evidence, but validates each trigger and keeps the decision in the maintained behavior catalog |
-| Guard sounds | Includes optional directional guard choreography in later operations | Initial baseline keeps exact generic IA guard clicks; richer choreography remains optional pending testing |
-| APU, hydraulics, rack fan | IA running media naturally includes startup before its steady loop | Treats each as one complete provider-owned sequence; never layers Leonardo startup over the IA intro |
-| Cockpit door | Adds IA open/close recordings and adjusted motion timing plus optional latch behavior | Uses the purchased IA open/close recordings with IA’s original trigger timing and no synthetic latch layer |
-| Model changes | Uses a prepared exhaust-locator model patch | Adds only the two approved locators when selected sounds actually require them |
-| Validation | Relies on the user applying scripted operations and regenerating package metadata correctly | Checks exact supported installs, XML selectors, Event collisions, bank differences, model nodes, metadata, hashes, and deterministic output automatically |
-| Removal | Restore the modified aircraft files or reinstall the package | Delete the single generated `maddog-sound-compat-...` Community folder |
-| Custom choices | Edit or reapply conversion operations | Uses a tested baseline by default; advanced users can list, override, and export complete sound-family choices |
-| Download contents | Script/instructions; some optional behavior requires user-provided audio | CLI and README only; no paid or generated audio is distributed |
+| Setup | Follow and apply conversion instructions | Download the tool and paste the commands from the guide |
+| Your original add-ons | Converted files are copied into the aircraft package | Leonardo and IA are only read; they are never changed |
+| Result | A converted aircraft sound setup | A separate `maddog-sound-compat-...` Community folder |
+| Removing it | Restore backups or reinstall the changed package | Delete the one generated Community folder |
+| Sound choices | Uses the script’s conversion choices | Uses a tested IA-first baseline; advanced users can change complete sound groups |
+| Leonardo crew and callouts | Some are recreated with extra WAV files | Original Leonardo crew-pack and PNF systems remain in use |
+| Leonardo-only features | Added back through selected script operations | Kept directly from Leonardo when IA has no complete replacement |
+| Safety checks | The user must apply everything correctly | The tool checks versions, source files, sound links, generated files, and repeatable output |
+| Paid audio in the download | No | No |
 
-## Important prerequisite: restore stock first
+## Why use the tool?
 
-Maddog Sound Fix validates the paid packages before it builds anything. It must start from supported stock Leonardo and Immersive Audio installations.
+### It does not change either paid add-on
 
-If you previously used Finnisher’s script—or any other conversion that replaced Maddog sound XML, banks, model files, or package metadata—restore the current stock packages first. The safest route is to use the official installers/updaters or reinstall the affected package. Do not try to make validation pass by editing hashes or copying individual files until the warning disappears.
+The tool reads your Leonardo and IA packages and builds a new add-on somewhere else. If you do not like the result, close the simulator and remove that generated folder.
 
-A changed GSX/Manager layout can be supported when every file the tool actually uses remains correct, but converted sound/model payloads are intentionally rejected.
+### It keeps the best parts of both packs
 
-## Which should I use?
+The baseline prefers IA sounds where a complete replacement exists and has been tested. Leonardo remains responsible for things IA does not fully replace, such as the selected crew pack, pilot-not-flying (PNF) callouts, and any missing warning or aircraft-specific sound.
 
-Finnisher’s script remains useful for understanding and manually experimenting with the conversion. Maddog Sound Fix is intended for users who want an automated, validated, removable result while retaining Leonardo-only behavior and keeping the purchased installations untouched.
+### It avoids mixing one machinery sequence
 
-The initial release is still completing native MSFS 2024 validation. MSFS 2020 remains runtime-unverified and may require package ordering after Leonardo.
+Startup, running, and shutdown sounds for one system must come from the same sound pack. Testing showed that mixing Leonardo startup with IA running could replay or overlap sounds when changing camera views. The tool groups those sounds together so users cannot accidentally create that combination.
+
+### It checks before building
+
+The tool stops if the installed packages are unsupported or important source files have been changed. It also checks the generated sound package before making it available to install.
+
+## Important: restore stock packages first
+
+If you previously used Finnisher’s script—or another sound conversion—you must restore current stock Leonardo and Immersive Audio packages before using Maddog Sound Fix.
+
+Use the official installer/updater or reinstall the affected add-on. Do not try to make validation pass by editing hashes or guessing which individual files need replacing. The tool is supposed to stop rather than build from an already converted installation.
+
+Normal Leonardo Manager crew changes and supported GSX file-list updates are handled separately; replaced sound or model files are not.
+
+## What will the first release sound like?
+
+The planned baseline uses:
+
+- IA for the major complete sound groups that pass final testing;
+- Leonardo for Manager-selected crew voices and PNF callouts;
+- Leonardo for genuinely unique aircraft sounds;
+- Leonardo as a fallback where an IA sound is missing or does not work.
+
+Native MSFS 2024 is being tested locally. MSFS 2020 can be built from supported files, but the maintainer does not own that simulator, so it remains unverified and may need the generated package ordered after Leonardo.
+
+## Which option should I choose?
+
+Use **Finnisher’s script** if you enjoy manual experimentation and want direct control over its individual conversion steps.
+
+Use **Maddog Sound Fix** if you want an automated, checked, removable package that leaves the paid add-ons untouched.
+
+Finnisher’s work is the foundation for this project and continues to provide important placement, behavior, and testing evidence. Maddog Sound Fix packages that knowledge into a safer repeatable process rather than replacing the community contribution.
