@@ -1,72 +1,75 @@
 # Community script or Maddog Sound Fix?
 
-Both options are based on the same excellent community work by @finnisher. Both require you to own Leonardo Fly the Maddog X and the Immersive Audio sound pack.
+Both options build on @finnisher's community work. Both require you to own Leonardo Fly the Maddog X and the Immersive Audio sound pack.
 
 ## The short version
 
-**Finnisher’s script** is a set of instructions for manually converting the Maddog sound setup.
+**Finnisher's script** is a set of instructions for manually converting the Maddog sound setup.
 
-**Maddog Sound Fix** is a Windows tool that does the complicated work for you, checks that the files are supported, and creates a separate add-on that is easy to remove.
+**Maddog Sound Fix** is a Windows installer that validates supported paid packages and creates a separate removable add-on without changing either source package.
 
-| | Finnisher’s script | Maddog Sound Fix |
+| | Finnisher's script | Maddog Sound Fix |
 | --- | --- | --- |
-| Setup | Follow and apply conversion instructions | Download the tool and paste the commands from the guide |
-| Your original add-ons | Converted files are copied into the aircraft package | Leonardo and IA are only read; they are never changed |
-| Result | A converted aircraft sound setup | A separate `maddog-sound-compat-...` Community folder |
-| Removing it | Restore backups or reinstall the changed package | Delete the one generated Community folder |
-| Sound choices | Uses the script’s conversion choices | Uses an IA-first baseline with two fixed isolated fallbacks; advanced users can change other complete sound groups |
-| Leonardo crew and callouts | Some are recreated with extra WAV files | Original Leonardo crew-pack and PNF systems remain in use |
+| Setup | Follow and apply conversion instructions | Download the ZIP and double-click the included installer batch file |
+| Your original add-ons | Converted files are copied into the aircraft package | Leonardo and IA are read only; they are never changed |
+| Result | A converted aircraft sound setup | A separate versioned `maddog-ia-sound-fix-...` Community folder |
+| Updating | Reapply the conversion manually | A new validated package is installed before a safely proven older version is removed |
+| Removing it | Restore backups or reinstall the changed package | Close the simulator and remove the one generated Community folder |
+| Sound choices | Uses the script's conversion choices | Uses one maintained IA-first configuration with two fixed isolated fallbacks |
+| Leonardo crew and callouts | Some are recreated with extra WAV files | Original Leonardo Manager crew-pack and PNF systems remain in use |
 | Leonardo-only features | Added back through selected script operations | Kept directly from Leonardo when IA has no complete replacement |
-| Safety checks | The user must apply everything correctly | The tool checks versions, source files, sound links, generated files, and repeatable output |
+| Safety checks | The user must apply everything correctly | The tool checks exact versions, source files, sound links, package structure, output separation, and repeatable bytes |
 | Paid audio in the download | No | No |
 
 ## Why use the tool?
 
 ### It does not change either paid add-on
 
-The tool reads your Leonardo and IA packages and builds a new add-on somewhere else. If you do not like the result, close the simulator and remove that generated folder.
+The tool reads the Leonardo and IA packages and builds a new add-on in Community. If you no longer want it, close the simulator and remove that generated folder.
 
-### It keeps the best parts of both packs
+### It automates detection and installation
 
-The baseline prefers IA sounds where a complete replacement exists and has sufficient evidence for inclusion. Leonardo remains responsible for its selected crew pack, pilot-not-flying (PNF) callouts, three-perspective mechanic call, and aircraft-specific behavior.
+The installer reads the normal Store or Steam simulator configuration, identifies the exact direct package folders, validates them, builds the package, and installs it under one versioned name. Path and target overrides remain available for expert use when automatic detection is ambiguous.
 
-Outside those intentional Leonardo systems, only two isolated IA compatibility gaps fall back to Leonardo:
+### It keeps the intended parts of both packs
 
-- cockpit-door motion, because IA's opening and closing routes become audible too late for the native door animation;
-- the fast approach-minimums warning, because the released IA Event targets a Wwise object that is absent from its bank.
+The maintained configuration prefers IA sounds where a complete compatible replacement exists. Leonardo remains responsible for its selected crew pack, pilot-not-flying callouts, three-perspective mechanic call, and aircraft-specific behavior.
 
-Those two fallbacks are fixed rather than offered as IA overrides.
+Outside those intentional Leonardo systems, two isolated IA compatibility gaps remain Leonardo-owned:
 
-### It avoids mixing one machinery sequence
+- cockpit-door motion, because IA's opening and closing routes become audible too late for the native animation;
+- the fast approach-minimums warning, because the released IA Event targets a Wwise object absent from its bank.
 
-Startup, running, and shutdown sounds for one system must come from the same sound pack. Testing showed that mixing Leonardo startup with IA running could replay or overlap sounds when changing camera views. The tool groups those sounds together so users cannot accidentally create that combination.
+### It keeps coupled sounds together
 
-### It checks before building
+Startup, running, and shutdown sounds for one system must come from the same sound pack. Testing showed that mixing stages could replay or overlap sounds when changing camera views. The fixed catalog keeps each complete audible family together.
 
-The tool stops if the installed packages are unsupported or important source files have been changed. It also checks the generated sound package before making it available to install.
+### It fails closed
+
+The tool stops when a paid package version is unsupported, a source file has changed, automatic discovery is ambiguous, an old generated package cannot be proved safe to remove, or generated bytes disagree with the planned package. It never edits either paid package to make validation pass.
 
 ## Important: restore stock packages first
 
-If you previously used Finnisher’s script—or another sound conversion—you must restore current stock Leonardo and Immersive Audio packages before using Maddog Sound Fix.
+If you previously used Finnisher's script or another conversion, restore current stock Leonardo and Immersive Audio packages before using Maddog Sound Fix. Use the official installer/updater or reinstall the affected add-on.
 
-Use the official installer/updater or reinstall the affected add-on. Do not try to make validation pass by editing hashes or guessing which individual files need replacing. The tool is supposed to stop rather than build from an already converted installation.
+If you used Maddog Sound Fix v2, also move its old unversioned generated folder out of Community before installing v3. The v3 installer refuses to load both generations together.
 
 Normal Leonardo Manager crew changes and supported GSX file-list updates are handled separately; replaced sound or model files are not.
 
-## What does the release baseline sound like?
+## What does the maintained mix sound like?
 
-The baseline uses:
+The fixed configuration uses:
 
-- IA for the compatible machinery, engine, wind, warning, and control groups;
+- IA for compatible machinery, engine, wind, warning, and control families;
 - Leonardo for Manager-selected crew voices, PNF callouts, the complete mechanic-call perspectives, and genuinely unique aircraft sounds;
-- Leonardo for the two isolated IA fallbacks: cockpit-door motion and the fast approach-minimums warning.
+- Leonardo for cockpit-door motion and the fast approach-minimums warning.
 
-Native MSFS 2024 has family-level evidence and targeted runtime checks; this is not a claim that broad simulator smoke testing is complete. MSFS 2020 can be built from supported files, but the maintainer does not own that simulator, so it remains runtime-unverified and may need the generated package ordered after Leonardo.
+Native MSFS 2024 has family-level evidence and targeted runtime checks. MSFS 2020 can be built from supported exact files, but remains runtime-unverified by the maintainer.
 
 ## Which option should I choose?
 
-Use **Finnisher’s script** if you enjoy manual experimentation and want direct control over its individual conversion steps.
+Use **Finnisher's script** if you enjoy manual experimentation and want direct control over its conversion steps.
 
-Use **Maddog Sound Fix** if you want an automated, checked, removable package that leaves the paid add-ons untouched.
+Use **Maddog Sound Fix** if you want an automated, checked, removable package with one maintained sound policy and untouched paid add-ons.
 
-Finnisher’s work is the foundation for this project and continues to provide important placement, behavior, and testing evidence. Maddog Sound Fix packages that knowledge into a safer repeatable process rather than replacing the community contribution.
+Finnisher's work is the foundation for this project. Maddog Sound Fix packages that knowledge into a repeatable installer rather than replacing the community contribution.
