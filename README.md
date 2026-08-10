@@ -20,11 +20,25 @@ Close Microsoft Flight Simulator and Leonardo Manager, then double-click **`Inst
 maddog-ia-sound-fix-<version>
 ```
 
-A new package is completed and validated before an older version-stamped Maddog Sound Fix package is removed. The installer never deletes a folder from its name alone.
+The installer completes and validates a hidden candidate before touching an older versioned package. It deletes an old package only when its exact name and minimal marker identify same-target Maddog Sound Fix output. Generated package directories are wholly tool-owned; links, junctions, foreign markers, and another target stop deletion.
 
-If you used an earlier release, first move the old unversioned generated folder—usually `maddog-sound-compat-native-2024` or `maddog-sound-compat-msfs2020`—out of Community. Never delete either paid source package.
+There is no rollback. If deletion or publication fails, keep the simulator closed and rerun the installer. Neither paid source package is deleted or modified.
+
+If you used an earlier unversioned release, first move the old generated folder—usually `maddog-sound-compat-native-2024` or `maddog-sound-compat-msfs2020`—out of Community.
 
 Do not download or share a generated sound package. Every user must own both add-ons and build locally from their own installations.
+
+## Report an unsupported package version
+
+The same executable can create one encrypted compatibility fingerprint:
+
+```powershell
+.\maddog-sound-fix.exe fingerprint --output ".\maddog-sound-fingerprint.zip"
+```
+
+The outer ZIP contains a public target/version/five-hash header plus `evidence.age`, which encrypts the approved XML, model, and offset-free Wwise evidence to the maintainer's public recipient. The command never uploads anything.
+
+Check existing issues, then attach only the generated fingerprint ZIP. Never attach either paid package, decrypted evidence, a generated overlay, or diagnostics containing private paths. A fingerprint is evidence for maintainer review; it does not automatically add support.
 
 ## Supported versions
 
@@ -35,18 +49,19 @@ Do not download or share a generated sound package. Every user must own both add
 
 MSFS 2020 remains runtime-unverified by the maintainer.
 
-Restore both paid packages to stock before running the tool. If another conversion replaced sound XML, banks, model files, or package metadata, use the official installer/updater or reinstall the affected add-on. Validation is designed to stop rather than build from modified purchased files.
+Restore both paid packages to stock before running the tool. Source admission checks exact target and package versions plus five representative SHA-256 pins. PNF, current crew, and interior model files remain operational parser inputs; modified purchased packages are unsupported and user-owned.
 
 ## What it does
 
 - Detects known Store and Steam Community locations and the exact Leonardo and IA package folders.
-- Validates supported versions, source identities, sound routing, model attachment points, generated package metadata, and repeatable output.
 - Starts from Leonardo's complete setup and applies one maintained IA-first sound configuration.
-- Preserves Leonardo Manager crew voices, PNF callouts, the complete mechanic call, and genuinely unique aircraft behavior.
+- Preserves Leonardo-selected crew, PNF callouts, the complete mechanic call, and aircraft-specific behavior.
+- Relocates selected Wwise Events and adds only the two approved model locators when needed.
 - Builds a separate removable Community package instead of changing either paid add-on.
-- Safely replaces earlier version-stamped Maddog Sound Fix packages only after proving their marker, payload hash, metadata, exact tree, and physical identity.
+- Replaces earlier versioned Maddog Sound Fix output through exact name and minimal same-target marker authority.
+- Creates encrypted, issue-shareable compatibility evidence for unknown versions without uploading it.
 
-The old `overlay` and `choices` commands, public family customization, and saved ownership files are no longer used. Future sound-policy changes ship in the catalog with a new release.
+The old `overlay` and `choices` commands, public family customization, saved ownership files, and separate fingerprint collector are no longer used.
 
 ## Sound coverage
 
@@ -54,8 +69,6 @@ The maintained mix uses IA for compatible machinery, engine, wind, warning, and 
 
 - **Cockpit-door motion**, because IA's routes become audible too late for the native animation.
 - **Fast approach-minimums warning**, because the released IA Event targets a Wwise object absent from its bank.
-
-Native 2024 also retains Leonardo-selected crew, pilot-not-flying callouts, the three-perspective mechanic call, and aircraft-specific behavior.
 
 See [Finnisher's script and Maddog Sound Fix](COMPARISON.md) for the practical differences. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
 
