@@ -72,10 +72,6 @@ The maintained mix uses IA for compatible machinery, engine, wind, warning, and 
 
 See [Finnisher's script and Maddog Sound Fix](COMPARISON.md) for the practical differences. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
 
-## Project boundary
-
-The development source remains private. This public repository is an artifact and release-notes portal, never a source mirror. The executable is unsigned and may trigger a SmartScreen warning; verify the release checksum before running it.
-
 ## License
 
 Maddog Sound Fix is distributed under the MIT License. The packaged README contains the complete project license and pinned third-party notices.
