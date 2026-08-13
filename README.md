@@ -20,7 +20,7 @@ Close Microsoft Flight Simulator and Leonardo Manager, then double-click **`Inst
 maddog-ia-sound-fix-<version>
 ```
 
-The installer completes and validates a hidden candidate before touching an older versioned package. It deletes an old package only when its exact name and minimal marker identify same-target Maddog Sound Fix output. Generated package directories are wholly tool-owned; links, junctions, foreign markers, and another target stop deletion.
+The installer completes and validates a hidden candidate before touching an older versioned package. It deletes an old package only when its exact name and marker identify same-target Maddog Sound Fix output. Generated package directories are wholly tool-owned; links, junctions, foreign markers, and another target stop deletion.
 
 There is no rollback. If deletion or publication fails, keep the simulator closed and rerun the installer. Neither paid source package is deleted or modified.
 
@@ -28,40 +28,28 @@ If you used an earlier unversioned release, first move the old generated folderâ
 
 Do not download or share a generated sound package. Every user must own both add-ons and build locally from their own installations.
 
-## Report an unsupported package version
-
-The same executable can create one encrypted compatibility fingerprint:
-
-```powershell
-.\maddog-sound-fix.exe fingerprint --output ".\maddog-sound-fingerprint.zip"
-```
-
-The outer ZIP contains a public target/version/five-hash header plus `evidence.age`, which encrypts the approved XML, model, and offset-free Wwise evidence to the maintainer's public recipient. The command never uploads anything.
-
-Check existing issues, then attach only the generated fingerprint ZIP. Never attach either paid package, decrypted evidence, a generated overlay, or diagnostics containing private paths. A fingerprint is evidence for maintainer review; it does not automatically add support.
-
 ## Supported versions
+
+Maddog Sound Fix follows the latest validated Leonardo package for each supported simulator:
 
 | Simulator | Leonardo | Immersive Audio |
 | --- | --- | --- |
-| Native MSFS 2024 | **2.1.282** or **2.1.283** | **1.0.0** |
-| MSFS 2020 | **2.0.281** | **1.0.0** |
+| Native MSFS 2024 | **2.1.283** | **1.0.0** |
+| MSFS 2020 | **2.0.283** | **1.0.0** |
 
-MSFS 2020 remains runtime-unverified by the maintainer.
+Older Leonardo builds are not supported. Update Leonardo and restore both paid packages to stock before running the tool. Modified sound, bank, model, or package files remain unsupported.
 
-Restore both paid packages to stock before running the tool. Source admission checks exact target and package versions plus five representative SHA-256 pins. PNF, current crew, and interior model files remain operational parser inputs; modified purchased packages are unsupported and user-owned.
+MSFS 2020 remains simulator-runtime-unverified by the maintainer and may require the generated package to load after Leonardo.
 
 ## What it does
 
 - Detects known Store and Steam Community locations and the exact Leonardo and IA package folders.
 - Starts from Leonardo's complete setup and applies one maintained IA-first sound configuration.
 - Preserves Leonardo-selected crew, PNF callouts, the complete mechanic call, and aircraft-specific behavior.
-- Relocates selected Wwise Events and adds only the two approved model locators when needed.
-- Builds a separate removable Community package instead of changing either paid add-on.
-- Replaces earlier versioned Maddog Sound Fix output through exact name and minimal same-target marker authority.
-- Creates encrypted, issue-shareable compatibility evidence for unknown versions without uploading it.
+- Relocates selected Wwise Events into a separate removable Community package.
+- Replaces earlier versioned Maddog Sound Fix output through exact name and same-target marker authority.
 
-The old `overlay` and `choices` commands, public family customization, saved ownership files, and separate fingerprint collector are no longer used.
+The tool exposes only the `install` command. It has no uploader and does not modify either paid package.
 
 ## Sound coverage
 
