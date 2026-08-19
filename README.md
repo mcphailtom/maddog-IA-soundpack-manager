@@ -1,65 +1,59 @@
 # Maddog Sound Fix
 
-Maddog Sound Fix is a Windows tool that builds and installs a separate Maddog sound add-on from Leonardo Fly the Maddog X and Immersive Audio packages you already own.
+Maddog Sound Fix is a portable Windows application that builds a separate compatibility package from Leonardo Fly the Maddog X and sound packages you already own.
 
-It includes neither paid add-on, never edits either source package, and keeps the generated package on your PC.
+It includes neither paid add-on, never edits either source package, and keeps the generated package owner-local on your PC.
 
-## Download and install
+## Download and run
 
-This repository is the public download and release-notes home. Download the current Windows ZIP under **Releases**, verify its published SHA-256, and extract all three files into one private local folder.
-
-Each ZIP contains exactly:
+This repository is the public download and release-notes home. Download the current Windows ZIP under **Releases**, compare its SHA-256 with the release notes, and extract both files into one private local folder:
 
 - `maddog-sound-fix.exe`
 - `README.md`
-- `Install Maddog Sound Fix.bat`
 
-Close Microsoft Flight Simulator and Leonardo Manager, then double-click **`Install Maddog Sound Fix.bat`**. One process detects the supported Store or Steam Community folder, validates both paid packages, builds the fixed sound package, and installs it as:
+Close Microsoft Flight Simulator and Leonardo Manager, then run `maddog-sound-fix.exe`. The portable application uses the Microsoft Edge WebView2 runtime already installed on Windows; no browser runtime or installer is bundled.
 
-```text
-maddog-ia-sound-fix-<version>
-```
+The Deployment Receipt shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. Native MSFS 2024 users may optionally choose their owner-local Anniversary beta folder for the current session.
 
-The installer completes and validates a hidden candidate before touching an older versioned package. It deletes an old package only when its exact name and marker identify same-target Maddog Sound Fix output. Generated package directories are wholly tool-owned; links, junctions, foreign markers, and another target stop deletion.
+If automatic detection is wrong or ambiguous, choose the exact physical Community folder. A link or junction is reported but cannot become mutation-ready; choose its physical target instead. Community and beta choices are never persisted.
 
-There is no rollback. If deletion or publication fails, keep the simulator closed and rerun the installer. Neither paid source package is deleted or modified.
-
-If you used an earlier unversioned release, first move the old generated folder—usually `maddog-sound-compat-native-2024` or `maddog-sound-compat-msfs2020`—out of Community.
-
-Do not download or share a generated sound package. Every user must own both add-ons and build locally from their own installations.
+Before Install, Update, Reinstall, source switching, or Uninstall, acknowledge that MSFS and Leonardo Manager are closed. Source switching uses the clearly labelled primary action and does not add a second confirmation. Uninstall uses a separate Windows confirmation dialog and works even if the paid packages are absent or no longer supported.
 
 ## Supported versions
 
-Maddog Sound Fix follows the latest validated Leonardo package for each supported simulator:
-
-| Simulator | Leonardo | Immersive Audio |
+| Simulator | Leonardo | Sound source |
 | --- | --- | --- |
-| Native MSFS 2024 | **2.1.283** | **1.0.0** |
-| MSFS 2020 | **2.0.283** | **1.0.0** |
+| MSFS 2024 | Native version **2.1.283** | Immersive Audio **1.0.0**, or optional owner-local Anniversary beta |
+| MSFS 2020 | version **2.0.283** | Immersive Audio **1.0.0** |
 
-Older Leonardo builds are not supported. Update Leonardo and restore both paid packages to stock before running the tool. Modified sound, bank, model, or package files remain unsupported.
+Restore paid packages to stock before installing. Versions not listed above are unsupported. The Anniversary beta is unavailable for MSFS 2020.
 
-MSFS 2020 remains simulator-runtime-unverified by the maintainer and may require the generated package to load after Leonardo.
+This release makes no new real-source or simulator-runtime acceptance claim for either simulator target. MSFS 2020 may additionally require the generated package to load after Leonardo.
 
-## What it does
+## Safety model
 
-- Detects known Store and Steam Community locations and the exact Leonardo and IA package folders.
-- Starts from Leonardo's complete setup and applies one maintained IA-first sound configuration.
-- Preserves Leonardo-selected crew, PNF callouts, the complete mechanic call, and aircraft-specific behavior.
-- Relocates selected Wwise Events into a separate removable Community package.
-- Replaces earlier versioned Maddog Sound Fix output through exact name and same-target marker authority.
+The application completes and validates one hidden candidate before removing prior generated output. It publishes one canonical package:
 
-The tool exposes only the `install` command. It has no uploader and does not modify either paid package.
+```text
+maddog-ia-sound-fix
+```
+
+The reserved namespace also includes historical numeric/development names and the two earlier compatibility names. Matching entries are wholly tool-owned regardless of marker, target, entry type, or contents. Links and junctions are removed as entries without following or modifying their targets. Differently named entries and both paid source packages are ignored.
+
+There is no rollback after deletion begins. Success and Failure retain selectable, copyable details, including definitely completed removals and recovery guidance. Keep the application, simulator, and Leonardo Manager closed until the operation finishes.
+
+Do not download or share a generated sound package. Every user must own the required add-ons and build locally from their own installations. Never share paid or generated XML, PCK, BNK, WEM, WAV, glTF, `.bin`, manifest, layout, package, or extracted-bank files.
+
+## Privacy and Windows behavior
+
+Maddog Sound Fix has no telemetry, network client, updater, settings store, or persisted Community/beta path preference. It is single-instance and prevents ordinary window closure while installation or removal is active.
+
+The executable is unsigned and may show a SmartScreen warning. The published SHA-256 confirms that your download matches the published release; it does not independently authenticate the publisher. Do not disable Windows security features.
 
 ## Sound coverage
 
-The maintained mix uses IA for compatible machinery, engine, wind, warning, and control families. Two isolated compatibility gaps remain Leonardo-owned:
-
-- **Cockpit-door motion**, because IA's routes become audible too late for the native animation.
-- **Fast approach-minimums warning**, because the released IA Event targets a Wwise object absent from its bank.
-
-See [Finnisher's script and Maddog Sound Fix](COMPARISON.md) for the practical differences. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
+The maintained mix uses IA for compatible machinery, engine, wind, warning, and control families while retaining selected Leonardo behavior where required. See [Finnisher's script and Maddog Sound Fix](COMPARISON.md) for the practical differences. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
 
 ## License
 
-Maddog Sound Fix is distributed under the MIT License. The packaged README contains the complete project license and pinned third-party notices.
+Maddog Sound Fix is distributed under the MIT License. The packaged README contains the complete project license and all required pinned third-party notices.
