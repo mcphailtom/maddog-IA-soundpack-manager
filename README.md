@@ -13,7 +13,7 @@ This repository is the public download and release-notes home. Download the curr
 
 Close Microsoft Flight Simulator and Leonardo Manager, then run `maddog-sound-fix.exe`. The portable application uses the Microsoft Edge WebView2 runtime already installed on Windows; no browser runtime or installer is bundled.
 
-The Deployment Receipt shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. Native MSFS 2024 users may optionally choose their owner-local Anniversary beta folder for the current session.
+The Deployment Receipt shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. Users of either supported simulator may optionally choose their owner-local Anniversary beta folder for the current session.
 
 If automatic detection is wrong or ambiguous, choose the exact physical Community folder. A link or junction is reported but cannot become mutation-ready; choose its physical target instead. Community and beta choices are never persisted.
 
@@ -24,11 +24,9 @@ Before Install, Update, Reinstall, source switching, or Uninstall, acknowledge t
 | Simulator | Leonardo | Sound source |
 | --- | --- | --- |
 | MSFS 2024 | Native version **2.1.283** | Immersive Audio **1.0.0**, or optional owner-local Anniversary beta |
-| MSFS 2020 | version **2.0.283** | Immersive Audio **1.0.0** |
+| MSFS 2020 | version **2.0.283** | Immersive Audio **1.0.0**, or optional owner-local Anniversary beta |
 
-Restore paid packages to stock before installing. Versions not listed above are unsupported. The Anniversary beta is unavailable for MSFS 2020.
-
-This release makes no new real-source or simulator-runtime acceptance claim for either simulator target. MSFS 2020 may additionally require the generated package to load after Leonardo.
+Restore paid packages to stock before installing. Versions not listed above are unsupported. MSFS 2020 remains simulator-runtime-unverified by the maintainer and may additionally require the generated package to load after Leonardo.
 
 ## Safety model
 
