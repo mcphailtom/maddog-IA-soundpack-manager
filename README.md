@@ -13,7 +13,7 @@ This repository is the public download and release-notes home. Download the curr
 
 Close Microsoft Flight Simulator and Leonardo Manager, then run `maddog-sound-fix.exe`. The portable application uses the Microsoft Edge WebView2 runtime already installed on Windows; no browser runtime or installer is bundled.
 
-The Deployment Receipt shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. You may optionally choose your owner-local Anniversary beta folder for the current session.
+The window shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. You may optionally choose your owner-local Anniversary beta folder for the current session.
 
 If automatic detection is wrong or ambiguous, choose the exact physical Community folder. A link or junction is reported but cannot become mutation-ready; choose its physical target instead. Leonardo and sound package folders inside Community may be links or junctions, such as an add-on manager creates. Community and beta choices are never persisted.
 
