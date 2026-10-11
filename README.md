@@ -49,7 +49,7 @@ The executable is unsigned and may show a SmartScreen warning. The published SHA
 
 ## Sound coverage
 
-The maintained mix uses IA for compatible machinery, engine, wind, warning, and control families while retaining selected Leonardo behavior where required. See [Finnisher's script and Maddog Sound Fix](COMPARISON.md) for the practical differences. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
+The maintained mix uses IA for compatible machinery, engine, wind, warning, and control families while retaining selected Leonardo behavior where required. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
 
 ## License
 
