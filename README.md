@@ -13,7 +13,7 @@ This repository is the public download and release-notes home. Download the curr
 
 Close Microsoft Flight Simulator and Leonardo Manager, then run `maddog-sound-fix.exe`. The portable application uses the Microsoft Edge WebView2 runtime already installed on Windows; no browser runtime or installer is bundled.
 
-The window shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. You may optionally choose your owner-local Anniversary beta folder for the current session.
+The window shows the detected Community folder, Leonardo package, selected and installed sound sources, generated-fix state, and the exact available action. IA 1.0 is selected by default. You may optionally choose your owner-local Anniversary beta folder for the current session. To keep Leonardo's own sounds for some of the eleven sound groups, such as ACARS, select **Choose sounds…** under Sounds and set those groups to **Leonardo**. At least one group stays with IA, and the installed fix remembers your choices until you uninstall it.
 
 If automatic detection is wrong or ambiguous, choose the exact physical Community folder. A link or junction is reported but cannot become mutation-ready; choose its physical target instead. Leonardo and sound package folders inside Community may be links or junctions, such as an add-on manager creates. Community and beta choices are never persisted.
 
@@ -43,13 +43,13 @@ Do not download or share a generated sound package. Every user must own the requ
 
 ## Privacy and Windows behavior
 
-Maddog Sound Fix has no telemetry, network client, updater, settings store, or persisted Community/beta path preference. It is single-instance and prevents ordinary window closure while installation or removal is active.
+Maddog Sound Fix has no telemetry, network client, updater, settings store, or persisted Community/beta path preference. Sound group choices are stored only in the generated fix. It is single-instance and prevents ordinary window closure while installation or removal is active.
 
 The executable is unsigned and may show a SmartScreen warning. The published SHA-256 confirms that your download matches the published release; it does not independently authenticate the publisher. Do not disable Windows security features.
 
 ## Sound coverage
 
-The maintained mix uses IA for compatible machinery, engine, wind, warning, and control families while retaining selected Leonardo behavior where required. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
+The maintained mix uses IA for compatible machinery, engine, wind, warning, and control families while retaining selected Leonardo behavior where required. You can keep Leonardo's own sounds for chosen groups instead; they then play exactly as Leonardo ships them, including its volume controls. Thanks to @finnisher and @DrPredrag for the community work that made this project possible.
 
 ## License
 
