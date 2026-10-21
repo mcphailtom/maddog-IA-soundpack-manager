@@ -1,5 +1,7 @@
 # Maddog Sound Fix
 
+This fix/workaround was always intended as a stopgap measure while Immersive Audio recover from data loss. At this stage it has, I believe met that bar and development has now ceased. Additionally when the new soundpack is released this repository and downloads will be removed completely. Until then, enjoy the fantastic sounds by Immersive Audio.
+
 Maddog Sound Fix is a portable Windows application that builds a separate compatibility package from Leonardo Fly the Maddog X and sound packages you already own.
 
 It includes neither paid add-on, never edits either source package, and keeps the generated package owner-local on your PC.
