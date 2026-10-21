@@ -2,10 +2,6 @@
 
 This fix/workaround was always intended as a stopgap measure while Immersive Audio recover from data loss. At this stage it has, I believe, met that bar and development has now ceased. Additionally when the new soundpack is released this repository and downloads will be removed completely. Until then, enjoy the fantastic sounds by Immersive Audio.
 
-Maddog Sound Fix is a portable Windows application that builds a separate compatibility package from Leonardo Fly the Maddog X and sound packages you already own.
-
-It includes neither paid add-on, never edits either source package, and keeps the generated package owner-local on your PC.
-
 ## Download and run
 
 This repository is the public download and release-notes home. Download the current Windows ZIP under **Releases**, compare its SHA-256 with the release notes, and extract both files into one private local folder:
@@ -28,20 +24,6 @@ Before Install, Update, Reinstall, source switching, or Uninstall, acknowledge t
 | MSFS 2024 | Native version **2.1.283** | Immersive Audio **1.0.0**, or optional owner-local Anniversary beta |
 
 Restore paid packages to stock before installing. Versions not listed above are unsupported. MSFS 2020 is no longer supported; v5.1.0 is the last release that builds for it, and Uninstall still removes its fix from an MSFS 2020 Community folder.
-
-## Safety model
-
-The application completes and validates one hidden candidate before removing prior generated output. It publishes one canonical package:
-
-```text
-maddog-ia-sound-fix
-```
-
-The reserved namespace also includes historical numeric/development names and the two earlier compatibility names. Matching entries are wholly tool-owned regardless of marker, target, entry type, or contents. Links and junctions are removed as entries without following or modifying their targets. Differently named entries and both paid source packages are ignored.
-
-There is no rollback after deletion begins. Success and Failure retain selectable, copyable details, including definitely completed removals and recovery guidance. Keep the application, simulator, and Leonardo Manager closed until the operation finishes.
-
-Do not download or share a generated sound package. Every user must own the required add-ons and build locally from their own installations. Never share paid or generated XML, PCK, BNK, WEM, WAV, glTF, `.bin`, manifest, layout, package, or extracted-bank files.
 
 ## Privacy and Windows behavior
 
